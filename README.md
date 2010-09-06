@@ -14,8 +14,6 @@ Real-time streaming of Wolfram Alpha queries
 
 ## Architecture
 
-Best explained through this image:
-
 ![Architecture](http://cl.ly/26d8a11ea0d823156c18/content)
 
 ## Slideshow Presentation
