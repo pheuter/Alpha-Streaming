@@ -1,0 +1,29 @@
+:javascript
+  WebSocket.__swfLocation = "/public/js/WebSocketMain.swf";
+  var socket = new Pusher('appid', 'stream');
+  socket.bind('new-query', function(query) {
+    if (query.type == "chrome") {
+      if (query.image_url != "undefined") {
+        $('<div id="container"><img src="/public/images/chrome.png"></img><a href="'+query.url+'"><img style="padding-bottom: 5px; padding-left: 5px" src="'+query.image_url+'" /></a></div>').hide().prependTo('#content').fadeIn('fast');
+      };
+    } else {
+      if (query.image_url != "undefined") {
+        $('<div id="container"><img src="/public/images/wave.png"></img><a href="'+query.url+'"><img style="padding-bottom: 5px; padding-left: 5px" src="'+query.image_url+'" /></a></div>').hide().prependTo('#content').fadeIn('fast');
+      };
+    };
+  });
+  
+  $.getJSON("http://webapp.com:couchdbport/path/to/db/view?descending=true&limit=10&callback=?", function(data) {
+    $.each(data.rows, function(i,item) {
+      if (item.value.type == "chrome") {
+        if (item.value.image_url != "undefined") {
+          $('<div id="container"><img src="/public/images/chrome.png"></img><a href="'+item.value.url+'"><img style="padding-bottom: 5px; padding-left: 5px" src="'+item.value.image_url+'" /></a></div>').hide().appendTo('#content').fadeIn('fast');
+        };
+      };
+      if (item.value.type == "wave") {
+        if (item.value.image_url != "undefined") {
+          $('<div id="container"><img src="/public/images/wave.png"></img><a href="'+item.value.url+'"><img style="padding-bottom: 5px; padding-left: 5px" src="'+item.value.image_url+'" /></a></div>').hide().appendTo('#content').fadeIn('fast');
+        };
+      };
+    });
+  });
