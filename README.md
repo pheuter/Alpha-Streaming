@@ -18,6 +18,10 @@ Best explained through this image:
 
 ![Architecture](http://cl.ly/26d8a11ea0d823156c18/content)
 
+## Slideshow Presentation
+
+[View](http://www.slideshare.net/gmaster1440/alpha-streaming-realtime)
+
 ## Help / Questions / Chat ?
 
   * [Email](mailto:phunny.phacts@gmail.com)
