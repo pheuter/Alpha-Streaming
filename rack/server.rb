@@ -3,7 +3,7 @@ require 'sinatra'
 require 'pusher'
 require 'couchrest'
 
-Pusher.app_id = '1160'
+Pusher.app_id = 'appid'
 Pusher.key = 'appkey'
 Pusher.secret = 'appsecret'
 
